@@ -1,0 +1,4 @@
+name: "Cirandas Responsive"
+layout: "cirandas-responsive"
+jquery_theme: "smoothness_mod"
+icon_theme: [default, pidgin]
