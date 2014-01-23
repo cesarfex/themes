@@ -8,7 +8,13 @@
     <meta name="description" content="<%= @environment.name %>" />
     <link rel="shortcut icon" href="<%= image_path(theme_favicon) %>" type="image/x-icon" />
     <%= noosfero_javascript %>
+    <%= javascript_include_tag "/designs/themes/cirandas-responsive/javascripts/boostrap.js" %>
     <%= noosfero_stylesheets %>
+    <%= javascript_include_tag "/designs/themes/cirandas-responsive/stylesheets/boostrap.css" %>
+    <%= javascript_include_tag "/designs/themes/cirandas-responsive/stylesheets/boostrap-theme.css" %>
+
+
+
 
     <%# Add custom tags/styles/etc via content_for %>
     <%= yield :head %>
@@ -29,7 +35,7 @@
   <%= render :file => "#{Rails.root}/public/designs/themes/cirandas/load.erb" %>
 
   <body class="<%= body_classes + @body_extra_classes %>">
-AAAAAAAAAAAAAAaAAAAAAAAAAAAa --------
+BBBBBBBBBBBBBB AAAAAAAAAAAAAAaAAAAAAAAAAAAa --------
 	  <a href="#content" id="link-go-content"><span><%= _("Go to the content") %></span></a>
 
     <%=
