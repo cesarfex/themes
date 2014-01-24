@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= html_language %>" lang="<%= html_language %>">
+<!DOCTYPE html>
+<html lang="<%= html_language %>">
   <head>
     <title><%= h page_title %></title>
     <%= yield(:feeds) %>
@@ -8,10 +8,11 @@
     <meta name="description" content="<%= @environment.name %>" />
     <link rel="shortcut icon" href="<%= image_path(theme_favicon) %>" type="image/x-icon" />
     <%= noosfero_javascript %>
-    <%= javascript_include_tag "/designs/themes/cirandas-responsive/javascripts/boostrap.js" %>
+    <%= javascript_include_tag "/designs/themes/cirandas-responsive/javascripts/bootstrap" %>
+
     <%= noosfero_stylesheets %>
-    <%= javascript_include_tag "/designs/themes/cirandas-responsive/stylesheets/boostrap.css" %>
-    <%= javascript_include_tag "/designs/themes/cirandas-responsive/stylesheets/boostrap-theme.css" %>
+    <%= stylesheet_link_tag "/designs/themes/cirandas-responsive/stylesheets/bootstrap" %>
+    <%= stylesheet_link_tag "/designs/themes/cirandas-responsive/stylesheets/bootstrap-theme" %>
 
 
 
@@ -29,13 +30,13 @@
     </script>
 
     <%= render 'layouts/owa' if Rails.env.production? %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   </head>
 
   <%= render :file => "#{Rails.root}/public/designs/themes/cirandas/load.erb" %>
 
   <body class="<%= body_classes + @body_extra_classes %>">
-BBBBBBBBBBBBBB AAAAAAAAAAAAAAaAAAAAAAAAAAAa --------
 	  <a href="#content" id="link-go-content"><span><%= _("Go to the content") %></span></a>
 
     <%=
@@ -43,8 +44,8 @@ BBBBBBBBBBBBBB AAAAAAAAAAAAAAaAAAAAAAAAAAAa --------
         if content.respond_to?(:call) then instance_eval &content else content end
       end.join("\n")
     %>
-
-    <div id="wrap-1">
+    <div class="container">
+      <div id="wrap-1" >
       <div id='theme-header'>
         <%= theme_header %>
       </div>
@@ -60,15 +61,17 @@ BBBBBBBBBBBBBB AAAAAAAAAAAAAAaAAAAAAAAAAAAa --------
           </ul>
           <div id="navigation-end"></div>
         </div><!-- end id="navigation" -->
-        <div id="content">
+        <div id="content" >
           <%= render :partial => 'layouts/content' %>
         </div><!-- end id="content" -->
       </div><!-- end id="wrap-2" -->
     </div><!-- end id="wrap-1" -->
+
     <%= render_environment_features(:logged_in) %>
     <div id="theme-footer">
       <%= theme_footer %>
     </div><!-- end id="theme-footer" -->
+    </div>
     <%= noosfero_layout_features %>
     <%= addthis_javascript %>
   </body>

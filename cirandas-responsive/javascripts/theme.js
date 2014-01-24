@@ -126,3 +126,4 @@ cirandas_theme.load_navigation = function () {
   navigation.find('#submenu-contents-trigger, #submenu-communities-trigger, #submenu-people-trigger').show();
 };
 
+
